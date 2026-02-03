@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int countPartitions(vector<int>& nums) {
+        int n=nums.size();
+        int left=0;
+        int count=0;
+    int sum=accumulate(nums.begin(),nums.end(),0);
+    for( int i=0;i<=n-2;i++){
+        left+=nums[i];
+        int right=sum-left;
+        if(abs(left-right)%2==0)count++;
+    }
+    return count;
+    }
+};
