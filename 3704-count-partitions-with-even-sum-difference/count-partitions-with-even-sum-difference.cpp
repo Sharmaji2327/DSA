@@ -1,15 +1,14 @@
 class Solution {
 public:
-    int countPartitions(vector<int>& nums) {
-        int n=nums.size();
-        int left=0;
-        int count=0;
+    int countPartitions(vector<int>& nums) {   
     int sum=accumulate(nums.begin(),nums.end(),0);
-    for( int i=0;i<=n-2;i++){
-        left+=nums[i];
-        int right=sum-left;
-        if(abs(left-right)%2==0)count++;
-    }
-    return count;
+    //   x+y=sum
+    //x-sum=y
+    // x-y mujhe chahiye
+    //x-sum+x
+    //2x-sum so 2x toh hmesha even toh s agar even raha toh sara partition valid hai warna nahi
+    if(sum%2==0)return nums.size()-1;
+    return 0;
+    
     }
 };
