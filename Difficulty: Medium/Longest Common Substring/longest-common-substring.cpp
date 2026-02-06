@@ -10,7 +10,7 @@ class Solution {
           ans=max(ans,t[i][j]);
       }
       else{
-          // substring break t[i
+          // yaha substring break hogi
           t[i][j]=0;
       }
       return t[i][j];
