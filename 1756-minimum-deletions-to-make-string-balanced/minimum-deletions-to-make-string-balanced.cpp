@@ -3,16 +3,17 @@ public:
     int minimumDeletions(string s) {
      stack<char>st;
      int count=0;
-    int j=s.size()-1;
-    while(j>=0){
-        if(!st.empty() && st.top()=='a' && s[j]=='b'){
+     int n=s.size();
+    int j=0;
+    while(j<n){
+        if(!st.empty() && st.top()=='b' && s[j]=='a'){
             st.pop();
             count++;
         }
         else {
             st.push(s[j]);
         }
-        j--;
+        j++;
         
     }
 return count;
